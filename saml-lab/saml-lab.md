@@ -106,7 +106,7 @@ Click **Save**
 
 ## Step 6 - Assign the user to the Tableau Online application
 
-You can assign users to applications in several ways. You can eith do it from the Directory by clicking the user then **Assign Applications** 
+You can assign users to applications in several ways. You can either do it from the Directory by clicking the user then **Assign Applications**
 
 ![Okta - User Assign 1](images/2018-12-26-18-45-22.png) and then selecting one or more applications:
 
