@@ -34,6 +34,8 @@ The **Assignments** tab will display next. You can add users here but we are goi
 
 For now select the **Sign On** tab and then the **edit** button:
 
+## Step 3 - Configure the Okta Sign On details and Import IdP Metadata to Tableau Online
+
 ![Okta - Sign On](images/2018-12-26-15-37-19.png)
 
 You can now add the *ACS URL* and *Tableau Server entity ID* from your Online site. Note that Okta does not read the Metadata file but uses the second option in Step 1.  
@@ -65,3 +67,65 @@ Whichever way you choose, save the file to your local computer (I usually make t
 Back in Tableau Online go to *Step 4* and Browse to the IdP metadata file you just downloaded:
 
 ![Tableau Online - Import Idp Metadata](images/2018-12-26-16-06-27.png)
+
+## Step 4 - Configure Okta Provisioning
+
+Tableau Online now supports automatic user provisioning from Okta using an open standard called [System for Cross-domain Identity management (SCIM)](http://www.simplecloud.info/)
+
+Configuring SCIM requires some setup in Tableau Online and Okta.
+
+In Tableau Online you enable SCIM at the bottom of the Authentication Setup page:
+
+![Tableau Online - Enable SCIM](images/2018-12-26-18-09-56.png)
+
+In Okta you select the Provisioning Tab in the Applications menu:
+
+![Okta - Provisioning](images/2018-12-26-18-06-02.png)
+
+Click on **Configure API Integration** then check *Enable API integration* and copy the *Base URL* and *API Token* from the Online setup page.
+
+![Okta - Enable SCIM](images/2018-12-26-18-08-31.png)
+
+Note that the Secret API Token will not show again and if you forget it you will need to generate a new one to configure Okta.
+
+You can click **Test API Credentials** to make sure you copied the Base URL and Secret correctly. Click **Save** when done.
+
+## Step 5 - Add a User to Okta
+
+Now that Okta and Tableau Online are configured you can add a new user to Okta and test the SCIM provisioning (and de-provisioning). Most Tableau customers will link Okta to an external Directory or Identity Store like Active Directory or LDAP. Also, most customers will manage users via groups but in this lab you can create a single user directly in Okta then assign the user to our Tableau Online application.
+
+In the **Directory** menu select **People** then **Add Person**
+
+![Okta - Add Person](images/2018-12-26-18-32-21.png)
+
+Enter the details of a new Okta user. Note that this user can be assigned to multiple applications in Okta and that is an extra step below.
+
+![Okta - Add Person details](images/2018-12-26-18-42-02.png)
+
+Click **Save**
+
+## Step 6 - Assign the user to the Tableau Online application
+
+You can assign users to applications in several ways. You can eith do it from the Directory by clicking the user then **Assign Applications** 
+
+![Okta - User Assign 1](images/2018-12-26-18-45-22.png) and then selecting one or more applications:
+
+![Okta - User Assign 2](images/2018-12-26-18-47-03.png)
+
+Leave the username as the email and click **Save and Go Back**
+
+![Okta - Save User Assignment](images/2018-12-26-18-49-04.png)
+
+Alternatively you can select **Applications** then the Tableau Online Application. Now you can assign the new user to Tableau Online. Click on **Assignments** in the Applications menu in Okta. Click on **Assign** then *Assign to People*
+
+![Okta - Assign Users 3](images/2018-12-26-18-50-50.png)
+
+With SCIM enabled this is all you need to do. Okta will provision the new user in Tableau. You can confirm this by going back to Tableau Online and checking to see if the user got added:
+
+![Tableau Online - Users](images/2018-12-26-18-52-57.png)
+
+[Note that the user was added as a Viewer - I am not sure if the default site role can be configured. Try testing with groups?]
+
+## Step 7 (Optional) - Configure MFA
+
+[TO DO]
