@@ -10,6 +10,6 @@ Please sign up for a personal Online site and Okta Development account before co
 
 ### Hands on Lab
 
-You will Configure your Tableau Online site to support SAML SSO. We will cover basic setup, automated provisioning using SCIM and Multi-factor Authentication
+You will Configure your Tableau Online site to support SAML SSO using Okta as the Idp. We will cover basic setup, automated provisioning using SCIM and Multi-factor Authentication
 
 See [detailed lab instructions](saml-lab/saml-lab.md)
