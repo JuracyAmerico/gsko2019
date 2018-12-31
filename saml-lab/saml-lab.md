@@ -93,9 +93,23 @@ Note that the Secret API Token will not show again and if you forget it you will
 
 You can click **Test API Credentials** to make sure you copied the Base URL and Secret correctly. Click **Save** when done.
 
+You will need to Enable at least **Create User**. Do this by selecting **To App** in the Provisioning Settings. Enable *Create Users* and *Deactivate Users* checkboxes and click ![](images/icon-save-small.png). This will enable Okta to make changes to Tableau Online.
+
+![Okta - Enable Create and Deactivation of users](images/2018-12-31-13-18-17.png)
+
+Optionally you can configure SCIM so that the users are maintained in Online and then imported into Okta. Review the Settings in the **To Okta** page:
+
+![Okta - To Okta Provisioning Settings](images/2018-12-31-13-28-39.png)
+
+If you have correctly configured Okta to add and deactivate users in Online you should see the Icons enabled on the Application in Okta like this:
+
+![Okta - Confirm provisioning is enabled](images/2018-12-31-13-31-49.png)
+
+![Note](images/icon-note.png) The two push options on the right should NOT be grayed out.
+
 ## Step 5 - Add a User to Okta
 
-Now that Okta and Tableau Online are configured you can add a new user to Okta and test the SCIM provisioning (and de-provisioning). Most Tableau customers will link Okta to an external Directory or Identity Store like Active Directory or LDAP. Also, most customers will manage users via groups but in this lab you can create a single user directly in Okta then assign the user to our Tableau Online application.
+Now that Okta and Tableau Online are configured you can add a new user to Okta and test the SCIM provisioning (and de-provisioning). Most Tableau customers will link Okta to an external Directory or Identity Store like Active Directory or LDAP so pushing from Okta to Online is a good option. Also, most customers will manage users via groups but in this lab you can create a single user directly in Okta then assign the user to our Tableau Online application.
 
 In the **Directory** menu select **People** then **Add Person**
 
