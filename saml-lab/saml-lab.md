@@ -48,9 +48,12 @@ Copy the Entity ID and ACS from Tableau to Okta:
 
 ![Okta - Entity ID and ACS](images/2018-12-26-15-49-07.png)
 
-> ![Note](images/2018-12-31-12-53-23.png) Note that the Form fields may be in a different order between the app. This is why exchanging metadata via the metadata files is usually the safest option if it is available.
+> ![Warning](images/icon-warning.png) The Form fields may be in a different order between the app. This is why exchanging metadata via the metadata files is usually the safest option if it is available.
+> Take care to copy the fields correctly. The Entity ID looks like a URL but has the word _metadata_ it it. The ACS URL is a real URL and has _SSO_ in it.
 
-> :warning: Note also that we do not need to download the Tableau certificate and load it into Okta. Why not?
+> ![Note](images/icon-note.png) Technically the Entity ID is a just a string identifier
+
+> ![Note](images/icon-note.png) We do not need to download the Tableau certificate and load it into Okta. Why not?
 
 Next download the Idp Metadata by clicking on the *Identity Provider metadata* link and saving the XML (right-click > Save as... in Chrome):
 
