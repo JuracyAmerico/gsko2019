@@ -55,6 +55,10 @@ Copy the Entity ID and ACS from Tableau to Okta:
 
 > ![Note](images/icon-note.png) We do not need to download the Tableau certificate and load it into Okta. Why not?
 
+Make sure you click ![Okta - Save](images/icon-save-small.png)
+
+![Okta - Don't forget to click Save](images/2018-12-31-13-49-46.png)
+
 Next download the Idp Metadata by clicking on the *Identity Provider metadata* link and saving the XML (right-click > Save as... in Chrome):
 
 ![Okta - IdP Metadata](images/2018-12-26-15-59-58.png)
@@ -91,9 +95,9 @@ Click on **Configure API Integration** then check *Enable API integration* and c
 
 Note that the Secret API Token will not show again and if you forget it you will need to generate a new one to configure Okta.
 
-You can click **Test API Credentials** to make sure you copied the Base URL and Secret correctly. Click **Save** when done.
+You can click **Test API Credentials** to make sure you copied the Base URL and Secret correctly. Click ![Okta - Save](images/icon-save-small.png) when done.
 
-You will need to Enable at least **Create User**. Do this by selecting **To App** in the Provisioning Settings. Enable *Create Users* and *Deactivate Users* checkboxes and click ![](images/icon-save-small.png). This will enable Okta to make changes to Tableau Online.
+You will need to Enable at least **Create User**. Do this by selecting **To App** in the Provisioning Settings. Enable *Create Users* and *Deactivate Users* checkboxes and click ![Okta - Save](images/icon-save-small.png). This will enable Okta to make changes to Tableau Online.
 
 ![Okta - Enable Create and Deactivation of users](images/2018-12-31-13-18-17.png)
 
@@ -119,7 +123,7 @@ Enter the details of a new Okta user. Note that this user can be assigned to mul
 
 ![Okta - Add Person details](images/2018-12-26-18-42-02.png)
 
-Click **Save**
+Click ![Okta - Save](images/icon-save-small.png)
 
 ## Step 6 - Assign the user to the Tableau Online application
 
@@ -185,7 +189,7 @@ The rules pop up has more sections. Scroll down to see the Device Trust and Acti
 
 We did not configure device trust so Any is the only option.
 
-For **Actions** select the *Prompt for Factor* checkbox. We already activated some Factor Types so all we need to do is to configure how often we want to prompt. Select *Every sign on* then **Save**
+For **Actions** select the *Prompt for Factor* checkbox. We already activated some Factor Types so all we need to do is to configure how often we want to prompt. Select *Every sign on* then ![Okta - Save](images/icon-save-small.png)
 
 ![Okta - Every sign on](images/2018-12-27-14-12-34.png)
 
