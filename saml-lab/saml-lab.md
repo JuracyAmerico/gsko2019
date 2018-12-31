@@ -48,10 +48,17 @@ Copy the Entity ID and ACS from Tableau to Okta:
 
 ![Okta - Entity ID and ACS](images/2018-12-26-15-49-07.png)
 
+<div class="alert tip">
+
+<p><strong>Tip:</strong> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.</p>
+
+</div>
+
 :warning:
 
 ```
-Note that the Form fields may be in a different order between the app. This is why exchanging metadata via the metadata files is usually the safest option if it is available.
+Note that the Form fields may be in a different order between the app. 
+This is why exchanging metadata via the metadata files is usually the safest option if it is available.
 ```
 
 :warning: Note also that we do not need to download the Tableau certificate and load it into Okta. Why not?
