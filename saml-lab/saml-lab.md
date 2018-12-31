@@ -4,7 +4,7 @@ This lab assumes you have a Tableau Online Site and an Okta Development Account.
 
 ## Step 1 - Sign into Online and Enable SAML  
 
-In your Web Browser Log into you Online site as a Site Administrator and Select the **Authentication** section from the **Settings** menu.
+In your Web Browser Log into your Online site as a Site Administrator and Select the **Authentication** section from the **Settings** menu.
 
 Check *enable an additional authentication option* under **Authentication types**
 
@@ -50,7 +50,7 @@ Copy the Entity ID and ACS from Tableau to Okta:
 
 Note that the Form fields may be in a different order between the app. This is why exchanging metadata via the metadata files is usually the safest option if it is available.
 
-Note also that we do not need to download the Tableau certificate and load it into Okta. Why not?
+:warning: Note also that we do not need to download the Tableau certificate and load it into Okta. Why not?
 
 Next download the Idp Metadata by clicking on the *Identity Provider metadata* link and saving the XML (right-click > Save as... in Chrome):
 
@@ -128,7 +128,7 @@ With SCIM enabled this is all you need to do. Okta will provision the new user i
 
 ## Step 7 - Test SAML Login
 
-Sign out of your Site Admin account in Tableau Online and also sign out of the Okta Developer Console Okta. If you do not sign out of Okta then when you sign in to Tableau using the new account Okta might show and error or send back the wrong assertion.
+Sign out of your Site Admin account in Tableau Online and also sign out of the Okta Developer Console. If you do not sign out of Okta then when you sign in to Tableau using the new account Okta might show and error or send back the wrong assertion.
 
 Now Sign into Tableau Online using the username of the user you assigned to the Tableau Online application in Okta. The browser should redirect you to Okta and present a login form.
 
