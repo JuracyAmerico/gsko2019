@@ -28,6 +28,6 @@ Confirm your account via email:
 
 ## Step 3 - Complete Qualtrics Survey Form
 
-After completing steps #1 and #2, please complete the [Qualtrics survey form](https://tableau.co1.qualtrics/jfe/form/SV_24dwS8oHACOvvGR) to let us know you have completed the Tableau Online and Okta Developer Account setup.
+After completing steps #1 and #2, please complete the [Qualtrics survey form](https://tableau.co1.qualtrics.com/jfe/form/SV_24dwS8oHACOvvGR) to let us know you have completed the Tableau Online and Okta Developer Account setup.
 
 If you have issues with any steps you can email [Robin Cottiss](rcottiss@tableau.com) or create an [issue](https://github.com/geordielad/gsko2019/issues) on this Github repository.
