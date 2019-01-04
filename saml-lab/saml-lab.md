@@ -1,16 +1,18 @@
-# SAML Lab - Setup Instructions
+# SAML Lab Part 1 - Enable Tableau Online for SAML
 
 This lab assumes you have a Tableau Online Site and an Okta Development Account. If you have already configured your site for SAML you may want to save your existing configuration and create a new configuration for the lab as we will use Okta to configure SCIM and MFA.
 
 ## Step 1 - Sign into Online and Enable SAML  
 
-In your Web Browser Log into your Online site as a Site Administrator and Select the **Authentication** section from the **Settings** menu.
+In your Web Browser Log into your Online site as a Site Administrator and Select the **Authentication** section from the **Settings** menu. Create a Bookmark for your site - you will use it several times during the lab.
 
-Check *enable an additional authentication option* under **Authentication types**
+Under Authentication types, Check 'Enable an additional authentication method'. Then, under SAML, click 'Edit Connection'.
 
 ![Tableau Online authentication settings](images/2018-12-26-15-13-58.png)
 
 ## Step 2 - Sign into the Okta Development Console and create a new application
+
+The console will be at [Okta - Dev Console](https://dev-xxxxxx-admin.oktapreview.com/admin/dashboard) where xxxxxx is your personal dev account (sent by Okta). Create a Bookmark for this link - you will use it several times during the lab.
 
 You may need to switch from the **Developer Console** to the **Classic UI**. The Developer console looks like this after clicking **Add Application** You can do that from the top right corner
 
@@ -38,7 +40,9 @@ For now select the **Sign On** tab and then the **edit** button:
 
 ![Okta - Sign On](images/2018-12-26-15-37-19.png)
 
-You can now add the *ACS URL* and *Tableau Server entity ID* from your Online site. Note that Okta does not read the Metadata file but uses the second option in Step 1.  
+You can now add the *ACS URL* and *Tableau Server entity ID* from your Online site.
+
+> ![Note](images/icon-note.png) Okta does not read the Metadata file but uses the second option in Step 1.  
 
 You can click on the **View Setup Instructions** on the Okta page. This link is specific to your Site as it includes the link to the Idp Metadata. The setup instructions tell you to the following:
 
@@ -93,11 +97,11 @@ Click on **Configure API Integration** then check *Enable API integration* and c
 
 ![Okta - Enable SCIM](images/2018-12-26-18-08-31.png)
 
-Note that the Secret API Token will not show again and if you forget it you will need to generate a new one to configure Okta.
+> ![Warning](images/icon-warning.png)  The Secret API Token will not show again and if you forget it you will need to generate a new one to configure Okta.
 
 You can click **Test API Credentials** to make sure you copied the Base URL and Secret correctly. Click ![Okta - Save](images/icon-save-small.png) when done.
 
-You will need to Enable at least **Create User**. Do this by selecting **To App** in the Provisioning Settings. Enable *Create Users* and *Deactivate Users* checkboxes and click ![Okta - Save](images/icon-save-small.png). This will enable Okta to make changes to Tableau Online.
+You will need to Enable at least **Create User**. Do this by selecting **To App** in the Provisioning Settings. Enable *Create Users* and *Deactivate Users* check boxes and click ![Okta - Save](images/icon-save-small.png). This will enable Okta to make changes to Tableau Online.
 
 ![Okta - Enable Create and Deactivation of users](images/2018-12-31-13-18-17.png)
 
@@ -119,7 +123,9 @@ In the **Directory** menu select **People** then **Add Person**
 
 ![Okta - Add Person](images/2018-12-26-18-32-21.png)
 
-Enter the details of a new Okta user. Note that this user can be assigned to multiple applications in Okta and that is an extra step below.
+Enter the details of a new Okta user.
+
+> ![Note](images/icon-note.png) This user can be assigned to multiple applications in Okta and that is an extra step below.
 
 ![Okta - Add Person details](images/2018-12-26-18-42-02.png)
 
@@ -152,69 +158,3 @@ With SCIM enabled this is all you need to do. Okta will provision the new user i
 Sign out of your Site Admin account in Tableau Online and also sign out of the Okta Developer Console. If you do not sign out of Okta then when you sign in to Tableau using the new account Okta might show and error or send back the wrong assertion.
 
 Now Sign into Tableau Online using the username of the user you assigned to the Tableau Online application in Okta. The browser should redirect you to Okta and present a login form.
-
-## Step 8 (Optional) - Configure MFA
-
-Okta and most other IdPs support Second Factor Authentication (2FA) or Multi-Factor Authentication (MFA). MFA is becoming more and more common in our customers because it is more secure than a Single Factor. In this part of the lab you will enable MFA for your SAML users. The configuration is all in Okta - Tableau does not really know that MFA is enabled. All Tableau needs to do is present any web pages that the MFA flow renders in web pages.
-
-To configure Okta for MFA:
-
-Sign back into Okta using the Okta Administrator account. From the **Security** menu select **Multifactor**
-
-![Okta - Multifactor Menu](images/2018-12-27-13-43-24.png)
-
-Okta supports several factor types and you can activate multiple types at the same time. SMS Authentication is one of the simpler to set up if you have a phone that can receive SMS messages. Enable SMS Authentication if you think you can receive SMS messages during the Lab session or you want to test this later
-
-![Okta - Enable Factor Types](images/2018-12-27-13-48-59.png)
-
-You can also create a security question. Enable this factor in addition to SMS. You will configure Okta to allow you to choose which factor to use on login.
-
-Select Activate on the drop down after clicking on the factor you want to enable:
-
-![Okta - Activate Factor Type](images/2018-12-27-13-53-03.png)
-
-Okta is very flexible in how you enable MFA for groups or users. Some IdPs allow the user to self register for MFA. In this Lab we will force all users of Tableau Online to use one of the activated Multi Factor Types when authenticating.
-
-In the Tableau Online Application scroll to the bottom where the Sign On Policy is located:
-
-![Okta Sign On Policy](images/2018-12-27-13-57-51.png)
-
-Click **Add Rule** and give it a name. Read the settings and understand the options. You can leave most options as defaults to enable MFA for all users assigned to the app. Note you can limit the rule to a subset of user or groups and to certain network zones. You can also limit the rule to certain platforms.
-
-![Okta - Sign on Rule Top](images/2018-12-27-14-06-55.png)
-
-The rules pop up has more sections. Scroll down to see the Device Trust and Actions Sections:
-
-![Okta - Device Trust and Actions](images/2018-12-27-14-08-18.png)
-
-We did not configure device trust so Any is the only option.
-
-For **Actions** select the *Prompt for Factor* checkbox. We already activated some Factor Types so all we need to do is to configure how often we want to prompt. Select *Every sign on* then ![Okta - Save](images/icon-save-small.png)
-
-![Okta - Every sign on](images/2018-12-27-14-12-34.png)
-
-The Sign On Policy should look like this:
-
-![Okta - Finished Sign On Policy](images/2018-12-27-14-13-59.png)
-
-Sign out of Okta and Tableau Online and Sign onto Online again using the Online user we set up for SAML.
-
-![Tableau Online - Sign In](images/2018-12-27-14-17-38.png)
-
-You will be redirected to Okta:
-
-![Okta - Sign In](images/2018-12-27-14-19-31.png)
-
-After entering the usual username and password you should get a second factor prompt. You can choose which factor to use by clicking on the down arrow next to the shield:
-
-![Okta - Select an authentication factor](images/2018-12-27-14-25-33.png)
-
-Pick *SMS authentication* if you can receive Text Messages or *Security Question*
-
-Here is how SMS Authentication looks. Note that the users phone has already been registered. If this is the first time for SMS you m ay be prompted to enter phone information:
-
-![Okta - SMS MFA](images/2018-12-27-14-27-49.png)
-
-In the Apple Messages app:
-
-![IOS - SMS MFA](images/2018-12-27-14-50-22.png)

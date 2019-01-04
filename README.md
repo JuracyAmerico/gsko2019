@@ -2,14 +2,18 @@
 
 This repository holds lab instructions and other assets related to the Deep Dive session at gSKO held in January 2019
 
-## SAML Hands on Lab
+## Lab Prerequisites
 
-### Prerequisites
+Please sign up for a personal Online site and Okta Development account before coming to the lab. You should do this several days before the lab to ensure that the steps are completed in time for the gSKO session. [Detailed prerequisite instructions](saml-lab/saml-prereqs.md)
 
-Please sign up for a personal Online site and Okta Development account before coming to the lab. [Detailed prerequisite instructions](saml-lab/saml-prereqs.md)
+## Lab 1 - SAML Configuration
 
-### Hands on Lab
+Configure your Tableau Online site to support SAML SSO using Okta as the Idp. We will cover basic setup and automated provisioning using System for Cross-domain Identity Management (SCIM):
 
-You will Configure your Tableau Online site to support SAML SSO using Okta as the Idp. We will cover basic setup, automated provisioning using SCIM and Multi-factor Authentication
+See [Lab Instructions](saml-lab/saml-lab.md)
 
-See [detailed lab instructions](saml-lab/saml-lab.md)
+## Lab 2 - MFA
+
+Configure Okta to add Multi-Factor Authentication (MFA) to your Online site.
+
+See [MFA Lab Instructions](saml-lab/saml-lab-mfa.md)
