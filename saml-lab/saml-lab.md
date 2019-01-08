@@ -12,7 +12,7 @@ Under Authentication types, Check 'Enable an additional authentication method'. 
 
 ## Step 2 - Sign into the Okta Development Console and create a new application
 
-The console will be at [Okta - Dev Console](https://dev-xxxxxx-admin.oktapreview.com/admin/dashboard) where xxxxxx is your personal dev account (sent by Okta). Create a Bookmark for this link - you will use it several times during the lab.
+The console will be in the Okta - Dev Console [(https://dev-xxxxxx-admin.oktapreview.com/admin/dashboard)](https://dev-xxxxxx-admin.oktapreview.com/admin/dashboard) where xxxxxx is your personal dev account (sent by Okta). Create a Bookmark for this link - you will use it several times during the lab.
 
 You may need to switch from the **Developer Console** to the **Classic UI**. The Developer console looks like this after clicking **Add Application** You can do that from the top right corner
 
@@ -81,7 +81,7 @@ Back in Tableau Online go to *Step 4* and Browse to the IdP metadata file you ju
 
 ## Step 4 - Configure Okta Provisioning
 
-Tableau Online now supports automatic user provisioning from Okta using an open standard called [System for Cross-domain Identity management (SCIM)](http://www.simplecloud.info/)
+Tableau Online now supports automatic user provisioning from Okta using an open standard called System for Cross-domain Identity management (SCIM)[(http://www.simplecloud.info/)](http://www.simplecloud.info/)
 
 Configuring SCIM requires some setup in Tableau Online and Okta.
 
