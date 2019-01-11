@@ -41,7 +41,7 @@ See [Glossary](glossary/glossary.md)
 
 ## FAQ
 
-See [Glossary](glossary/glossary.md)
+See [FAQ](faq/faq.md)
 
 ## Awesome List of Security and IAM Links
 
