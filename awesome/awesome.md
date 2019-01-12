@@ -64,7 +64,7 @@ The help content is often the same across platforms but we separate Windows and 
 
 ## Product Sites
 
-* [Okta](htps://www.okta.com/) - Create a free developer account for labs
+* [Okta](https://www.okta.com/) - Create a free developer account for labs
 * [Ping](https://www.pingidentity.com/en.html) - Another Enterprise IdP
 * [OneLogin](https://www.onelogin.com/) - Enterprise IdP
 * [Duo](https://duo.com/) - Common Enterprise MFA Solution
