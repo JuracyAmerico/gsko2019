@@ -14,7 +14,7 @@ Also, if you inspect a non-tunnel message like line 61 below you will see that t
 
 ![Fiddler Capture 2](images/2019-01-12-15-25-15.png)
 
-If Decryption is not enabled then you will see a lot more *tunnel to* messages like this:
+If Decryption is not enabled then you will see a lot more "*tunnel to*" messages like this:
 
 ![Fiddler Capture - Not Decrypted](images/2019-01-12-15-29-05.png)
 
