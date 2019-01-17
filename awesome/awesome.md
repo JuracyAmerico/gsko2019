@@ -59,7 +59,7 @@ The help content is often the same across platforms but we separate Windows and 
 * [Personally Identifiable Information (PII)](https://en.wikipedia.org/wiki/Personally_identifiable_information)
 * [Public Key Infrastructure (PII)](https://en.wikipedia.org/wiki/Public_key_infrastructure)
 * [Certificate Authority](https://en.wikipedia.org/wiki/Certificate_authority)
-* [RSA (cryptosytem)](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
+* [RSA (cryptosystem)](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
 * [PKCS](https://en.wikipedia.org/wiki/PKCS)
 
 ## Product Sites
